@@ -10,205 +10,128 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     color: #333;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+    line-height: 1.6;
 }
 
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 30px;
+    padding: 2rem 1rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 20px;
+    margin: 1rem;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
 }
 
 header h1 {
     color: white;
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.controls {
+header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* Navigation */
+nav {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     flex-wrap: wrap;
 }
 
-.btn {
-    padding: 12px 24px;
+nav label {
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+nav select {
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+nav select:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-}
-
-.btn.primary {
-    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-    color: white;
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
 }
 
-.btn.primary:hover {
+nav button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
 }
 
-.btn.secondary {
-    background: linear-gradient(45deg, #74b9ff, #0984e3);
-    color: white;
-    box-shadow: 0 4px 15px rgba(116, 185, 255, 0.4);
-}
-
-.btn.secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(116, 185, 255, 0.6);
-}
-
-/* Info Panel */
-.info-panel {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px);
-}
-
-.element-details h2 {
-    color: #2d3436;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.element-properties {
+/* Main Layout */
+main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.property {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    background: rgba(116, 185, 255, 0.1);
-    border-radius: 8px;
-    border-left: 4px solid #74b9ff;
-}
-
-.property .label {
-    font-weight: 600;
-    color: #2d3436;
-}
-
-.property span:last-child {
-    color: #0984e3;
-    font-weight: 500;
-}
-
-/* Quiz Panel */
-.quiz-panel {
-    display: none;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px);
-}
-
-.quiz-panel.active {
-    display: block;
-}
-
-.quiz-content h2 {
-    color: #2d3436;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.quiz-question {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.quiz-question p {
-    font-size: 1.2rem;
-    color: #636e72;
-    margin-bottom: 10px;
-}
-
-.quiz-symbol {
-    font-size: 3rem !important;
-    font-weight: bold !important;
-    color: #e17055 !important;
-    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.quiz-stats {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.quiz-stats span {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #2d3436;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Periodensystem */
-.periodic-table {
-    display: grid;
-    grid-template-columns: repeat(18, minmax(60px, 1fr));
-    grid-template-rows: repeat(7, auto);
-    gap: 4px;
-    margin-bottom: 30px;
+#periodic-table {
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 15px;
     backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    display: grid;
+    grid-template-columns: repeat(18, minmax(50px, 1fr));
+    grid-template-rows: repeat(7, auto);
+    gap: 3px;
     justify-content: center;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .element {
     background: rgba(255, 255, 255, 0.9);
     border: 2px solid transparent;
     border-radius: 8px;
-    padding: 8px 4px;
+    padding: 0.5rem 0.25rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    height: 85px;
-    width: 100%;
+    height: 70px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
 }
 
 .element:hover {
@@ -235,6 +158,115 @@ header h1 {
     animation: incorrectShake 0.5s ease;
 }
 
+/* Element Details */
+.element-number {
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: #666;
+    line-height: 1;
+}
+
+.element-symbol {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+}
+
+.element-name {
+    font-size: 0.5rem;
+    color: #666;
+    line-height: 1.1;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Elementkategorien */
+.element.alkalimetalle {
+    background: linear-gradient(135deg, #ff7675, #e84393);
+    color: white;
+}
+
+.element.alkalimetalle .element-number,
+.element.alkalimetalle .element-symbol,
+.element.alkalimetalle .element-name {
+    color: white;
+}
+
+.element.halogene {
+    background: linear-gradient(135deg, #e17055, #d73027);
+    color: white;
+}
+
+.element.halogene .element-number,
+.element.halogene .element-symbol,
+.element.halogene .element-name {
+    color: white;
+}
+
+.element.edelgase {
+    background: linear-gradient(135deg, #636e72, #2d3436);
+    color: white;
+}
+
+.element.edelgase .element-number,
+.element.edelgase .element-symbol,
+.element.edelgase .element-name {
+    color: white;
+}
+
+.element.uebergangsmetalle {
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    color: white;
+}
+
+.element.uebergangsmetalle .element-number,
+.element.uebergangsmetalle .element-symbol,
+.element.uebergangsmetalle .element-name {
+    color: white;
+}
+
+.element.nichtmetalle {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+}
+
+.element.nichtmetalle .element-number,
+.element.nichtmetalle .element-symbol,
+.element.nichtmetalle .element-name {
+    color: white;
+}
+
+/* Sidebar - Element Info */
+#element-info {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    height: fit-content;
+    position: sticky;
+    top: 1rem;
+}
+
+#element-info h2 {
+    color: #2d3436;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #74b9ff;
+    padding-bottom: 0.5rem;
+}
+
+#info-content {
+    color: #636e72;
+    font-size: 1rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Animationen */
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -251,182 +283,51 @@ header h1 {
     75% { transform: translateX(5px); }
 }
 
-.element-number {
-    font-size: 0.65rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 2px;
-    line-height: 1;
+@keyframes successFlash {
+    0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    50% { background: linear-gradient(135deg, #00b894 0%, #00cec9 100%); }
 }
 
-.element-symbol {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 2px;
-    line-height: 1;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
 }
 
-.element-name {
-    font-size: 0.55rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.1;
-    font-weight: 500;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Elementkategorien Farben */
-.alkali-metal {
-    background: linear-gradient(135deg, #ff7675, #e84393);
+/* Quiz Modus */
+.quiz-mode #element-info {
+    background: linear-gradient(135deg, #fdcb6e, #e17055);
     color: white;
 }
 
-.alkaline-earth {
-    background: linear-gradient(135deg, #fdcb6e, #e84393);
+.quiz-mode #element-info h2 {
     color: white;
+    border-bottom-color: white;
 }
 
-.transition-metal {
-    background: linear-gradient(135deg, #74b9ff, #0984e3);
+.quiz-mode #info-content {
     color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
-
-.post-transition {
-    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-    color: white;
-}
-
-.metalloid {
-    background: linear-gradient(135deg, #fd79a8, #fdcb6e);
-    color: white;
-}
-
-.nonmetal {
-    background: linear-gradient(135deg, #00b894, #00cec9);
-    color: white;
-}
-
-.halogen {
-    background: linear-gradient(135deg, #e17055, #d73027);
-    color: white;
-}
-
-.noble-gas {
-    background: linear-gradient(135deg, #636e72, #2d3436);
-    color: white;
-}
-
-/* Legende */
-.legend {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    padding: 25px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-}
-
-.legend h3 {
-    color: #2d3436;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.legend-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background: rgba(116, 185, 255, 0.1);
-    border-radius: 8px;
-}
-
-.legend-color {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    flex-shrink: 0;
-}
-
-.legend-color.alkali-metal { background: linear-gradient(135deg, #ff7675, #e84393); }
-.legend-color.alkaline-earth { background: linear-gradient(135deg, #fdcb6e, #e84393); }
-.legend-color.transition-metal { background: linear-gradient(135deg, #74b9ff, #0984e3); }
-.legend-color.post-transition { background: linear-gradient(135deg, #a29bfe, #6c5ce7); }
-.legend-color.metalloid { background: linear-gradient(135deg, #fd79a8, #fdcb6e); }
-.legend-color.nonmetal { background: linear-gradient(135deg, #00b894, #00cec9); }
-.legend-color.halogen { background: linear-gradient(135deg, #e17055, #d73027); }
-.legend-color.noble-gas { background: linear-gradient(135deg, #636e72, #2d3436); }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .periodic-table {
-        grid-template-columns: repeat(18, minmax(50px, 1fr));
-        gap: 3px;
-        padding: 15px;
+    main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
-    .element {
-        height: 75px;
-        padding: 6px 3px;
-        font-size: 0.8rem;
-    }
-    
-    .element-symbol {
-        font-size: 1.2rem;
-    }
-    
-    .element-name {
-        font-size: 0.5rem;
-    }
-    
-    .element-number {
-        font-size: 0.6rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    .controls {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .periodic-table {
-        grid-template-columns: repeat(18, minmax(35px, 1fr));
+    #periodic-table {
+        grid-template-columns: repeat(18, minmax(45px, 1fr));
         gap: 2px;
-        padding: 10px;
-        max-width: 100%;
-        overflow-x: auto;
+        padding: 1rem;
     }
     
     .element {
         height: 60px;
-        padding: 4px 2px;
-        font-size: 0.7rem;
-    }
-    
-    .element-number {
-        font-size: 0.5rem;
+        padding: 0.4rem 0.2rem;
+        font-size: 0.75rem;
     }
     
     .element-symbol {
@@ -437,64 +338,140 @@ header h1 {
         font-size: 0.45rem;
     }
     
-    .element-properties {
-        grid-template-columns: 1fr;
+    .element-number {
+        font-size: 0.55rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
     }
     
-    .quiz-stats {
+    nav {
         flex-direction: column;
-        gap: 10px;
+        gap: 0.5rem;
     }
     
-    .quiz-symbol {
-        font-size: 2rem !important;
+    nav button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
     
-    .legend-items {
-        grid-template-columns: 1fr;
+    #periodic-table {
+        grid-template-columns: repeat(18, minmax(35px, 1fr));
+        gap: 1px;
+        padding: 0.5rem;
+        overflow-x: auto;
+    }
+    
+    .element {
+        height: 50px;
+        padding: 0.3rem 0.1rem;
+        font-size: 0.7rem;
+    }
+    
+    .element-number {
+        font-size: 0.5rem;
+    }
+    
+    .element-symbol {
+        font-size: 0.9rem;
+    }
+    
+    .element-name {
+        font-size: 0.4rem;
+    }
+    
+    #element-info {
+        padding: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .periodic-table {
-        grid-template-columns: repeat(18, minmax(28px, 1fr));
-        gap: 1px;
-        padding: 8px;
-        margin-bottom: 20px;
-    }
-    
-    .element {
-        height: 45px;
-        padding: 2px 1px;
-        font-size: 0.6rem;
-    }
-    
-    .element-number {
-        font-size: 0.45rem;
-    }
-    
-    .element-symbol {
-        font-size: 0.8rem;
-    }
-    
-    .element-name {
-        display: none; /* Namen bei sehr kleinen Bildschirmen ausblenden */
+    header {
+        margin: 0.5rem;
+        padding: 1rem;
     }
     
     header h1 {
         font-size: 1.5rem;
     }
     
-    .quiz-symbol {
-        font-size: 1.5rem !important;
+    nav {
+        margin: 0.5rem;
+        padding: 0.5rem;
     }
     
-    .info-panel, .quiz-panel {
-        padding: 15px;
-        margin-bottom: 20px;
+    main {
+        padding: 0.5rem;
     }
     
-    .legend {
-        padding: 15px;
+    #periodic-table {
+        grid-template-columns: repeat(18, minmax(25px, 1fr));
+        gap: 1px;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
     }
-        }
+    
+    .element {
+        height: 35px;
+        padding: 0.2rem 0.1rem;
+        font-size: 0.6rem;
+    }
+    
+    .element-number {
+        font-size: 0.4rem;
+    }
+    
+    .element-symbol {
+        font-size: 0.7rem;
+    }
+    
+    .element-name {
+        display: none; /* Namen bei sehr kleinen Bildschirmen ausblenden */
+    }
+    
+    #element-info {
+        padding: 0.75rem;
+    }
+    
+    #element-info h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Zusätzliche Utility-Klassen */
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
